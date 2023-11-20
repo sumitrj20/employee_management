@@ -22,10 +22,10 @@ def add_emp(request):
         e.phone=emp_phone
         e.address=emp_address
         e.department=emp_department
-        if emp_working is None:
-            e.working=False
-        else:
-            e.working=True
+        #if emp_working is None:
+         #   e.working=False
+       # else:
+           # e.working=True
         e.save()
         return redirect("/emp/home/")
     return render(request,"emp/add_emp.html")
@@ -46,7 +46,7 @@ def do_update_emp(request,emp_id):
         emp_id_temp=request.POST.get("emp_id")
         emp_phone=request.POST.get("emp_phone")
         emp_address=request.POST.get("emp_address")
-        emp_working=request.POST.get("emp_working")
+       # emp_working=request.POST.get("emp_working")
         emp_department=request.POST.get("emp_department")
 
         e=Emp.objects.get(pk=emp_id)
@@ -56,9 +56,9 @@ def do_update_emp(request,emp_id):
         e.phone=emp_phone
         e.address=emp_address
         e.department=emp_department
-        if emp_working is None:
-            e.working=False
-        else:
-            e.working=True
+       # if emp_working is None:
+          #  e.working=False
+       # else:
+           # e.working=True
         e.save()
     return redirect("/emp/home/")
